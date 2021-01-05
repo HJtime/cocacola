@@ -1,7 +1,7 @@
 :root{
     --color-black: #000000;
     --color-white: #ffffff;
-    --color-deep-grey: #333333;
+    --color-deep-grey: #636363;
     --color-grey: #dfdfdf;
     --color-red: #e70012;
 
@@ -376,4 +376,54 @@ h1, h2, h3, h4{
 
 .video__list ul img{
     width: 240px;
+}
+
+/* footer */
+.footer{
+    margin-top: var(--spacing-reguler);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-deep-grey);
+}
+
+.footer::before{
+    content: '';
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-grey);
+}
+
+.footer__list{
+    display: flex;
+    margin-top: var(--spacing-medium);
+}
+
+.footer__list li{
+    margin: var(--spacing-micro);
+}
+
+.footer__list li a{
+    color: var(--color-deep-grey);
+}
+
+.footer__logo{
+    margin: var(--spacing-small) 0;
+}
+
+.footer img{
+    width: 200px;
+}
+
+.footer::after{
+    content: '';
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-red);
 }
