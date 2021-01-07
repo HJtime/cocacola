@@ -60,3 +60,32 @@ function currentSlide(num){
     slides[slideIndex].style.display = 'block';
     dots[slideIndex].setAttribute('class', 'active');
 }
+
+// 비디오 필터링
+const videoList=document.querySelector('.video__list ul');
+const videoBox=document.querySelector('.video__thumbnail');
+const thumbnail=document.querySelectorAll('.thumbnail');
+
+videoList.addEventListener('click', (event)=>{
+    const filter=event.target.dataset.type||event.target.parentNode.dataset.type;
+
+    if(filter===null){
+        return;
+    }
+
+    // 버튼 선택
+    const active=document.querySelector('.list.active');
+    active.classList.remove('active');
+    const target=event.target.claseName==='list'? event.target : event.target.parentNode;
+    target.classList.add('active');
+
+    // 필터링
+    thumbnail.forEach((video)=>{
+        if(filter===video.dataset.filter){
+            video.classList.add('visible');
+            console.log(filter, video.dataset.filter)
+        }else{
+            video.classList.remove('visible');
+        }
+    });
+})

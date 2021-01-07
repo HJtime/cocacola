@@ -338,6 +338,14 @@ h1, h2, h3, h4{
     margin-right: var(--spacing-small);
 }
 
+.thumbnail{
+    display: none;
+}
+
+.thumbnail.visible{
+    display: block;
+}
+
 .video__thumbnail img{
     position: absolute;
     width: 100%;
@@ -371,7 +379,7 @@ h1, h2, h3, h4{
     transition: all 300ms ease-in-out;
 }
 
-.video__list ul li:hover{
+.video__list ul li:hover, .video__list ul li.active{
     -webkit-filter: grayscale(1);
 }
 
