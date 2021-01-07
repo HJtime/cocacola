@@ -69,7 +69,7 @@ const thumbnail=document.querySelectorAll('.thumbnail');
 videoList.addEventListener('click', (event)=>{
     const filter=event.target.dataset.type||event.target.parentNode.dataset.type;
 
-    if(filter===null){
+    if(filter===null||filter===undefined){
         return;
     }
 
@@ -83,9 +83,36 @@ videoList.addEventListener('click', (event)=>{
     thumbnail.forEach((video)=>{
         if(filter===video.dataset.filter){
             video.classList.add('visible');
-            console.log(filter, video.dataset.filter)
         }else{
             video.classList.remove('visible');
         }
     });
+})
+
+// 비디오 팝업
+const videoPopup=document.querySelector('.video__popupbox');
+const video=document.querySelectorAll('.popup');
+
+videoPopup.addEventListener('click', ()=>{
+    video.forEach((cf)=>{
+        if(cf){
+            cf.classList.remove('visible');
+        }
+    });
+})
+
+videoBox.addEventListener('click', (e)=>{
+    const filter=e.target.dataset.filter;
+
+    if(filter===null||filter===undefined){
+        return;
+    }
+
+    video.forEach((cf)=>{
+        if(filter===cf.dataset.cf){
+            cf.classList.add('visible');
+        }else{
+            cf.classList.remove('visible');
+        }
+    })
 })
